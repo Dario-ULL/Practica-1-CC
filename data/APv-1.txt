@@ -1,7 +1,7 @@
 # Automata de Pila por vaciado de pila para reconocer el lenguaje
 #  L = {a^nb^n | n > 0}
 # Se representa el epsilon con un .
-q1 q2
+q1 q2 q3 q4 q5
 a b
 S A
 q1

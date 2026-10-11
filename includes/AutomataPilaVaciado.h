@@ -35,6 +35,13 @@ class AutomataPilaVaciado {
     bool resolverCadena(std::string cadenaEntrada) const;
     void showAutomata() const;
     void activarTraza(bool activar);
+
+    std::set<std::string> getConjuntoEstados() const { return conjuntoEstados_; }
+    std::set<std::string> getConjuntoAlfabetoEntrada() const { return conjuntoAlfabetoEntrada_; }
+    std::set<std::string> getConjuntoAlfabetoPila() const { return conjuntoAlfabetoPila_; }
+    std::string getEstadoInicial() const { return estadoInicial_; }
+    std::string getSimboloInicialPila() const { return simboloInicialPila_; }
+    std::multimap<std::string, Transicion> getTransiciones() const { return transiciones_; }
   private:
     bool resolverCadenaRecursivo(std::string estadoActual, std::string cadenaEntrada, std::string pilaActual, 
                                  std::vector<Traza> &traza) const; 

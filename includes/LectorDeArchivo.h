@@ -26,8 +26,8 @@ class LectorDeArchivo {
     LectorDeArchivo(std::string nombreArchivo);
     ~LectorDeArchivo() = default;
 
-    void leerArchivo(std::string nombreArchivo);
     AutomataPilaVaciado getAutomataPilaVaciado() const { return automata_; }
   private:
+    bool validarAutomata() const; 
     AutomataPilaVaciado automata_;
 };

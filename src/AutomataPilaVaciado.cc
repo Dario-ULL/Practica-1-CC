@@ -87,7 +87,7 @@ AutomataPilaVaciado::resolverCadena(std::string cadenaEntrada) const {
   }
   bool resultado = resolverCadenaRecursivo(estadoActual, cadenaEntrada, pilaActual, traza);
   if (traza_ == true) {
-std::cout << "Traza de la resolución de la cadena:\n";
+  std::cout << "Traza de la resolución de la cadena:\n";
     int anchoEstado = 6;
     int anchoCadena = static_cast<int>(std::max<size_t>(cadenaEntrada.length() + 2, 8));
     int anchoPila   = 8;
@@ -150,7 +150,6 @@ AutomataPilaVaciado::resolverCadenaRecursivo(std::string estadoActual, std::stri
     if (resolverCadenaRecursivo(transicion.estadoDestino_, nuevaCadena, nuevaPila, traza)) {
       return true;
     }
-    traza.pop_back();
   }
   return false;
 }

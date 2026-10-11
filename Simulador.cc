@@ -44,18 +44,18 @@ int main(int argc, char* argv[]) {
   }
   std::cout << "Archivo recibido: " << archivo_config << std::endl;
   AutomataPilaVaciado automata;
-  if (activar_traza == "y") {
-    automata.activarTraza(true);
-  } else if (activar_traza == "n") {
-    automata.activarTraza(false);
-  } else {
-    std::cerr << "ERROR: Opción de traza inválida. Use 'y' o 'n'." << std::endl;
-    return 2;
-  }
   try {
     LectorDeArchivo lector(archivo_config);
     automata = lector.getAutomataPilaVaciado();
     std::cout << "Autómata cargado correctamente desde el archivo." << std::endl;
+    if (activar_traza == "y") {
+      automata.activarTraza(true);
+    } else if (activar_traza == "n") {
+      automata.activarTraza(false);
+    } else {
+      std::cerr << "ERROR: Opción de traza inválida. Use 'y' o 'n'." << std::endl;
+      return 2;
+    }
     automata.showAutomata();
   } catch (const std::exception& e) {
     std::cerr << "ERROR: Error al procesar el archivo: " << e.what() << std::endl;
